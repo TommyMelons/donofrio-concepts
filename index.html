@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D'Onofrio Homepage Concepts</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body { margin: 0; overflow: hidden; color: #15191d; background: #e9ecec; font-family: Arial, sans-serif; }
+    header {
+      height: 76px; display: grid; grid-template-columns: 220px 1fr auto; align-items: center; gap: 24px;
+      padding: 11px 18px; background: white; border-bottom: 1px solid #cbd0d2;
+    }
+    .brand img { display: block; width: 185px; }
+    nav { display: flex; justify-content: center; gap: 6px; }
+    button {
+      padding: 10px 14px; border: 1px solid #cbd0d2; border-radius: 4px; color: #4b5358;
+      background: white; font: 700 12px Arial, sans-serif; cursor: pointer;
+    }
+    button:hover { border-color: #20262b; color: #20262b; }
+    button.active { border-color: #15191d; color: white; background: #15191d; }
+    .actions { display: flex; align-items: center; gap: 14px; }
+    #concept-name { color: #687076; font-size: 11px; white-space: nowrap; }
+    #open-page { color: #15191d; font-size: 12px; font-weight: 700; text-decoration: none; white-space: nowrap; }
+    iframe { display: block; width: 100%; height: calc(100vh - 76px); border: 0; background: white; transition: opacity .12s; }
+    iframe.loading { opacity: 0; }
+    @media (max-width: 800px) {
+      body { overflow: auto; }
+      header { height: auto; grid-template-columns: 1fr auto; gap: 10px; padding: 10px 12px; }
+      .brand img { width: 155px; }
+      nav { grid-column: 1 / -1; order: 3; justify-content: flex-start; overflow-x: auto; padding-top: 5px; }
+      nav button { flex: 0 0 auto; }
+      #concept-name { display: none; }
+      iframe { height: calc(100vh - 116px); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html"><img src="assets/donofrio-logo.png" alt="D'Onofrio General Contractors Corp."></a>
+    <nav aria-label="Homepage concepts">
+      <button class="active" data-page="concept-1.html" data-name="Editorial / Studio">1 · Editorial</button>
+      <button data-page="concept-2.html" data-name="Heritage / Family">2 · Heritage</button>
+      <button data-page="concept-3.html" data-name="Industrial / Bold">3 · Industrial</button>
+      <button data-page="concept-4.html" data-name="Modern / Minimal">4 · Modern</button>
+    </nav>
+    <div class="actions">
+      <span id="concept-name">Editorial / Studio</span>
+      <a id="open-page" href="concept-1.html" target="_blank" rel="noopener">Open full screen ↗</a>
+    </div>
+  </header>
+  <iframe id="preview" src="concept-1.html" title="D'Onofrio homepage concept preview"></iframe>
+  <script>
+    const buttons = document.querySelectorAll('[data-page]');
+    const preview = document.querySelector('#preview');
+    const name = document.querySelector('#concept-name');
+    const openPage = document.querySelector('#open-page');
+
+    function selectConcept(button) {
+      buttons.forEach((item) => item.classList.remove('active'));
+      button.classList.add('active');
+      preview.classList.add('loading');
+      preview.src = new URL(button.dataset.page, location.href).href;
+      name.textContent = button.dataset.name;
+      openPage.href = button.dataset.page;
+      history.replaceState(null, '', `#${button.dataset.page.replace('.html', '')}`);
+    }
+
+    preview.addEventListener('load', () => preview.classList.remove('loading'));
+    buttons.forEach((button) => button.addEventListener('click', () => selectConcept(button)));
+
+    const requested = `${location.hash.slice(1)}.html`;
+    const initial = [...buttons].find((button) => button.dataset.page === requested);
+    if (initial) selectConcept(initial);
+  </script>
+</body>
+</html>
