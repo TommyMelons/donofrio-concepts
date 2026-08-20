@@ -4,6 +4,7 @@ html { scroll-behavior:smooth; }
 body { margin:0; color:var(--white); background:var(--black); font-family:"IBM Plex Mono",monospace; }
 img { display:block; width:100%; }
 a { color:inherit; text-decoration:none; }
+:focus-visible { outline:3px solid var(--yellow); outline-offset:3px; }
 .skip-link { position:fixed; top:-100px; left:10px; z-index:99; padding:10px; color:var(--black); background:var(--yellow); }
 .skip-link:focus { top:10px; }
 header { position:sticky; top:0; z-index:20; display:grid; grid-template-columns:260px 1fr auto auto; align-items:stretch; min-height:76px; background:var(--black); border-bottom:1px solid var(--line); }
@@ -26,6 +27,7 @@ nav a:hover { color:var(--yellow); }
 .hero-note p { max-width:650px; margin:0; font-size:clamp(14px,1.4vw,20px); line-height:1.5; }
 .hero-note a { flex:none; padding:14px 18px; color:var(--black); background:var(--yellow); font-size:11px; text-transform:uppercase; }
 .scroll { align-self:end; font-size:9px; text-transform:uppercase; writing-mode:vertical-rl; }
+.hero-caption { position:absolute; top:38px; right:var(--pad); max-width:300px; margin:0; color:#b9c0c0; font-size:8px; line-height:1.5; text-align:right; text-transform:uppercase; letter-spacing:.06em; }
 
 .ticker { overflow:hidden; padding:16px 0; color:var(--black); background:var(--yellow); white-space:nowrap; }
 .ticker div { font:800 clamp(25px,3vw,42px) "Barlow Condensed",sans-serif; text-transform:uppercase; animation:slide 20s linear infinite; }
@@ -55,7 +57,7 @@ nav a:hover { color:var(--yellow); }
 .projects .section-title span { color:#6a6f6f; }
 .project-ledger { border-top:2px solid var(--black); }
 .project-ledger article { position:relative; display:grid; grid-template-columns:70px 1fr 1fr auto; align-items:center; gap:25px; min-height:115px; border-bottom:1px solid #a8aaa7; }
-.project-ledger article>span,.project-ledger p,.project-ledger i { font-size:10px; font-style:normal; text-transform:uppercase; }
+.project-ledger article>span,.project-ledger p,.project-ledger small { font-size:10px; font-style:normal; text-transform:uppercase; }
 .project-ledger h3 { margin:0; font:800 clamp(28px,3.5vw,55px) "Barlow Condensed",sans-serif; text-transform:uppercase; }
 .project-ledger p { margin:0; }
 .project-ledger img { position:absolute; z-index:3; left:18%; width:260px; height:180px; object-fit:cover; opacity:0; transform:scale(.85) rotate(-3deg); transition:.2s; pointer-events:none; }
@@ -100,11 +102,12 @@ footer p { color:#8f9696; font-size:10px; line-height:1.8; text-transform:upperc
 footer small { grid-column:1/-1; padding-top:20px; border-top:1px solid var(--line); color:#697070; font-size:9px; }
 
 @media(max-width:900px) {
-  header { grid-template-columns:1fr auto; }
-  header nav,.phone { display:none; }
+  header { grid-template-columns:1fr auto auto; }
+  header nav { grid-column:1/-1; grid-row:2; display:flex; justify-content:flex-start; overflow-x:auto; }
   .hero-grid { grid-template-columns:1fr; }
   .hero-note { grid-column:1; }
   .scroll { display:none; }
+  .hero-caption { top:36px; right:22px; max-width:180px; }
   .metrics,.cap-grid { grid-template-columns:1fr 1fr; }
   .field-strip { grid-template-columns:1fr 1fr; }
   .field-strip>p { grid-column:1/-1; min-height:70px; }
@@ -116,8 +119,10 @@ footer small { grid-column:1/-1; padding-top:20px; border-top:1px solid var(--li
 @media(max-width:600px) {
   header { min-height:65px; }
   .logo img { width:155px; }
+  .phone { display:none; }
   .estimate { padding:12px; font-size:9px; }
-  .hero h1 { font-size:25vw; }
+  .hero h1 { font-size:clamp(60px,21vw,88px); line-height:.74; }
+  .hero-caption { display:none; }
   .hero-note { display:block; }
   .hero-note a { display:inline-block; margin-top:20px; }
   .metrics,.cap-grid,.credential-grid { grid-template-columns:1fr; }
@@ -128,11 +133,15 @@ footer small { grid-column:1/-1; padding-top:20px; border-top:1px solid var(--li
   .project-ledger article>span { grid-column:1; grid-row:1; }
   .project-ledger h3 { grid-column:3; grid-row:1; align-self:end; font-size:25px; }
   .project-ledger p { grid-column:3; grid-row:2; align-self:start; }
-  .project-ledger i { display:none; }
+  .project-ledger small { display:none; }
   .project-ledger img { position:static; grid-column:2; grid-row:1/3; display:block; width:76px; height:58px; opacity:1; transform:none; }
   .project-ledger article:hover img { transform:none; }
   .contact>div { display:block; }
   .contact span { display:block; margin-top:25px; }
   footer { grid-template-columns:1fr; }
 }
-@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .ticker div { animation:none; } }
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+  *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+  .ticker div { animation:none; }
+}

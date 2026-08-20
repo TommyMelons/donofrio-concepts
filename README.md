@@ -20,7 +20,7 @@ This direction presents D'Onofrio as a modern operator without losing its constr
 
 ## Recommendation
 
-Concept 4 is the recommended direction.
+Concept 4 is the recommended direction, pending client confirmation of credentials, project years, and testimonials.
 
 - It balances family credibility, field capability, and modern project control without pushing any one idea too far.
 - It gives project owners the fastest route to services, work, qualifications, and an estimate.
@@ -36,4 +36,4 @@ Concept 4 is the recommended direction.
 - Verified company metrics, including fleet size, project value, safety record, and workforce count.
 - Final service priorities and the type of estimate or qualification request the contact form should collect.
 
-Stock photography and video are placeholders. Replace them with approved D'Onofrio assets before launch.
+Project sections use names and photography published on D'Onofrio's current website. Remaining stock hero and crew photography is representative and should be replaced with approved D'Onofrio assets before launch.

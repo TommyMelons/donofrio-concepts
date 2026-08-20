@@ -5,6 +5,9 @@ Research completed August 20, 2026. The current site confirms that D'Onofrio is 
 ## Sites reviewed
 
 - [D'Onofrio General Contractors](https://www.donofrio.biz/index.html): Established the real company story, disciplines, family roots, and current content gaps. The site relies on long text blocks and gives projects, equipment, and field work too little visual weight.
+- [D'Onofrio Marine](https://www.donofrio.biz/marine.html): Verified the West Midtown Ferry Terminal project and supplied approved-site project photography for these concepts.
+- [D'Onofrio Substation](https://www.donofrio.biz/substation.html): Verified the Mott Haven, Astor, and Newtown substation projects and supplied their existing project photography.
+- [D'Onofrio Roofing](https://www.donofrio.biz/roofing.html): Verified the Con Edison 74th Street Turbine Roof Replacement project and its existing photography.
 - [Turner Construction](https://www.turnerconstruction.com/): Uses a short human headline, a full-screen project image, clear audience paths, and repeated proof through projects, commitments, and local presence.
 - [Gilbane](https://gilbaneco.com/): Pairs family ownership with global capability. The useful lesson is that heritage works best when it supports current operations.
 - [Structure Tone, STO Building Group](https://stobuildinggroup.com/structuretone): Organizes credibility around locations, leaders, sectors, and measurable operating facts.
@@ -21,6 +24,7 @@ Research completed August 20, 2026. The current site confirms that D'Onofrio is 
 - [SiteInspire, Building and Construction](https://www.siteinspire.com/websites?categories=220): The strongest examples use big type, minimal grids, and project-first homepages rather than generic service-page templates.
 - [SiteInspire, Maben](https://www.siteinspire.com/website/13389-maben): A useful big-type, minimal construction reference with a simple visual system.
 - [Recent, formerly Godly](https://godly.website/): Reinforces the current move toward bold type, modular image feeds, and motion that helps browsing rather than decorating the page.
+- [Unsplash, heavy-lift crane barge](https://unsplash.com/photos/a-large-crane-on-a-barge-X-kS3DTrKUA): Supplies the temporary Concept 3 marine hero. The subject clearly demonstrates barge, crane, vessel, and heavy-lift capability.
 
 ## Anti-references
 
@@ -35,4 +39,4 @@ Research completed August 20, 2026. The current site confirms that D'Onofrio is 
 
 ## Photography note
 
-All photography in this pass is free stock imagery used as a visual placeholder. It is selected to read as heavy civil work, marine construction, active sites, crews, equipment, and New York infrastructure. Replace it with approved D'Onofrio project, yard, fleet, crew, and family photography before launch. No AI-generated people are used.
+Project sections now use photography and project names published on D'Onofrio's current marine, substation, and roofing pages. Remaining hero, crew, and field images are free stock placeholders. Replace those with approved D'Onofrio yard, fleet, crew, family, and active-site photography before launch. No AI-generated people are used.

@@ -1,8 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
   <title>D'Onofrio Homepage Concepts</title>
   <style>
     * { box-sizing: border-box; }
@@ -20,8 +21,10 @@
     }
     button:hover { border-color: #20262b; color: #20262b; }
     button.active { border-color: #15191d; color: white; background: #15191d; }
+    :focus-visible { outline: 3px solid #d52230; outline-offset: 3px; }
     .actions { display: flex; align-items: center; gap: 14px; }
     #concept-name { color: #687076; font-size: 11px; white-space: nowrap; }
+    #copy-link { padding: 0; border: 0; color: #15191d; background: transparent; }
     #open-page { color: #15191d; font-size: 12px; font-weight: 700; text-decoration: none; white-space: nowrap; }
     iframe { display: block; width: 100%; height: calc(100vh - 76px); border: 0; background: white; transition: opacity .12s; }
     iframe.loading { opacity: 0; }
@@ -34,19 +37,23 @@
       #concept-name { display: none; }
       iframe { height: calc(100vh - 116px); }
     }
+    @media (prefers-reduced-motion: reduce) {
+      iframe { transition: none; }
+    }
   </style>
 </head>
 <body>
   <header>
     <a class="brand" href="index.html"><img src="assets/donofrio-logo.png" alt="D'Onofrio General Contractors Corp."></a>
     <nav aria-label="Homepage concepts">
-      <button class="active" data-page="concept-1.html" data-name="Editorial / Studio">1 · Editorial</button>
-      <button data-page="concept-2.html" data-name="Heritage / Family">2 · Heritage</button>
-      <button data-page="concept-3.html" data-name="Industrial / Bold">3 · Industrial</button>
-      <button data-page="concept-4.html" data-name="Modern / Minimal">4 · Modern</button>
+      <button type="button" class="active" aria-pressed="true" data-page="concept-1.html" data-name="Editorial / Studio">1 · Editorial</button>
+      <button type="button" aria-pressed="false" data-page="concept-2.html" data-name="Heritage / Family">2 · Heritage</button>
+      <button type="button" aria-pressed="false" data-page="concept-3.html" data-name="Industrial / Bold">3 · Industrial</button>
+      <button type="button" aria-pressed="false" data-page="concept-4.html" data-name="Modern / Minimal">4 · Modern</button>
     </nav>
     <div class="actions">
-      <span id="concept-name">Editorial / Studio</span>
+      <span id="concept-name" aria-live="polite">Editorial / Studio</span>
+      <button id="copy-link" type="button">Copy concept link</button>
       <a id="open-page" href="concept-1.html" target="_blank" rel="noopener">Open full screen ↗</a>
     </div>
   </header>
@@ -55,13 +62,19 @@
     const buttons = document.querySelectorAll('[data-page]');
     const preview = document.querySelector('#preview');
     const name = document.querySelector('#concept-name');
+    const copyLink = document.querySelector('#copy-link');
     const openPage = document.querySelector('#open-page');
 
     function selectConcept(button) {
-      buttons.forEach((item) => item.classList.remove('active'));
+      buttons.forEach((item) => {
+        item.classList.remove('active');
+        item.setAttribute('aria-pressed', 'false');
+      });
       button.classList.add('active');
+      button.setAttribute('aria-pressed', 'true');
       preview.classList.add('loading');
       preview.src = new URL(button.dataset.page, location.href).href;
+      preview.title = `D'Onofrio ${button.dataset.name} homepage concept`;
       name.textContent = button.dataset.name;
       openPage.href = button.dataset.page;
       history.replaceState(null, '', `#${button.dataset.page.replace('.html', '')}`);
@@ -69,6 +82,15 @@
 
     preview.addEventListener('load', () => preview.classList.remove('loading'));
     buttons.forEach((button) => button.addEventListener('click', () => selectConcept(button)));
+    copyLink.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        copyLink.textContent = 'Link copied';
+        window.setTimeout(() => copyLink.textContent = 'Copy concept link', 1600);
+      } catch {
+        window.prompt('Copy this concept link:', location.href);
+      }
+    });
 
     const requested = `${location.hash.slice(1)}.html`;
     const initial = [...buttons].find((button) => button.dataset.page === requested);
