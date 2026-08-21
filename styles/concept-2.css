@@ -7,12 +7,13 @@ a { color:inherit; text-decoration:none; }
 :focus-visible { outline:3px solid var(--brick); outline-offset:3px; }
 .skip-link { position:fixed; top:-100px; left:10px; z-index:100; background:white; padding:10px; }
 .skip-link:focus { top:10px; }
-.topline { display:flex; justify-content:space-between; padding:9px var(--pad); color:white; background:var(--navy); font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.1em; }
+.topline { display:flex; justify-content:flex-start; padding:9px var(--pad); color:white; background:var(--navy); font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.1em; }
 header { display:flex; align-items:center; justify-content:space-between; gap:30px; padding:20px var(--pad); border-bottom:1px solid #d9d0bd; background:var(--paper); }
 .logo { width:220px; }
 nav { display:flex; align-items:center; gap:32px; font-size:13px; font-weight:700; text-transform:uppercase; }
 nav a:hover { color:var(--brick); }
 .estimate { padding:13px 17px; border:2px solid var(--navy); }
+.header-phone { margin-left:auto; color:var(--navy); font-size:12px; font-weight:800; white-space:nowrap; }
 
 .hero { min-height:760px; display:grid; grid-template-columns:48% 52%; }
 .hero-copy { position:relative; display:flex; flex-direction:column; justify-content:center; padding:90px var(--pad); background:var(--cream); }
@@ -42,14 +43,13 @@ h1,h2 { font-family:"Newsreader",serif; }
 .story-copy > p:not(.section-label) { font-size:17px; line-height:1.7; }
 .underlined { align-self:flex-start; margin-top:20px; padding-bottom:5px; border-bottom:2px solid var(--brick); font-size:12px; font-weight:800; text-transform:uppercase; }
 
-.trust { display:grid; grid-template-columns:repeat(5,1fr); padding:0 var(--pad); background:var(--navy); color:white; }
-.trust div { min-height:180px; padding:35px 25px; border-left:1px solid rgba(255,255,255,.2); }
+.trust { display:grid; grid-template-columns:repeat(4,minmax(220px,1fr)); overflow-x:auto; padding:0 var(--pad); background:var(--navy); color:var(--cream); }
+.trust div { min-height:104px; padding:24px 25px; border-left:1px solid rgba(255,255,255,.2); }
 .trust div:last-child { border-right:1px solid rgba(255,255,255,.2); }
-.trust span { color:var(--gold); font-size:11px; }
-.trust strong { display:block; margin:32px 0 8px; font-size:15px; }
-.trust p { margin:0; color:#b9c2ca; font-size:11px; line-height:1.5; }
+.trust strong { display:block; margin:0 0 12px; font-size:12px; text-transform:uppercase; letter-spacing:.08em; }
+.trust p { margin:0; color:#d7d0c1; font-size:10px; line-height:1.5; text-transform:uppercase; letter-spacing:.07em; }
 
-.services,.projects,.testimonials { padding:clamp(90px,11vw,160px) var(--pad); }
+.services,.projects,.testimonials,.careers { padding:clamp(90px,11vw,160px) var(--pad); }
 .title-block { display:grid; grid-template-columns:1fr 2fr; gap:40px; margin-bottom:70px; }
 .title-block h2 { max-width:850px; }
 .service-grid { display:grid; grid-template-columns:1fr 1fr; border-top:1px solid #bfb6a4; border-left:1px solid #bfb6a4; }
@@ -70,14 +70,20 @@ h1,h2 { font-family:"Newsreader",serif; }
 .project-card p { margin:0 8px; color:#746b5d; font-size:10px; text-transform:uppercase; letter-spacing:.07em; }
 
 .testimonials { display:grid; grid-template-columns:1fr 1.7fr; gap:8vw; background:white; }
-.quotes blockquote { margin:0; padding:0 0 45px; border-bottom:1px solid #c9c1b2; }
-.quotes blockquote + blockquote { padding-top:45px; }
-.quotes blockquote p { margin:0 0 28px; font:400 clamp(28px,3.2vw,46px)/1.2 "Newsreader",serif; }
+.testimonials { padding-top:clamp(60px,7vw,100px); padding-bottom:clamp(60px,7vw,100px); }
+.testimonial-intro h2 { font-size:clamp(36px,4.5vw,64px); }
+.quotes blockquote { margin:0; padding:0 0 28px; border-bottom:1px solid #c9c1b2; }
+.quotes blockquote + blockquote { padding-top:28px; }
+.quotes blockquote p { margin:0 0 20px; font:400 clamp(22px,2.6vw,36px)/1.25 "Newsreader",serif; }
 .quotes footer { color:var(--brick); font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.07em; }
 .contact { display:flex; align-items:end; justify-content:space-between; gap:40px; padding:90px var(--pad); color:white; background:var(--brick); }
 .contact h2 { max-width:850px; margin:0; font-size:clamp(48px,7vw,98px); line-height:.92; }
 .contact .section-label { color:var(--cream); }
 .button-light { flex:0 0 auto; color:var(--navy); background:var(--cream); }
+.careers { display:grid; grid-template-columns:1fr 1.5fr; gap:8vw; background:var(--cream); }
+.careers h2 { margin:0; color:var(--navy); font:600 clamp(40px,5vw,72px)/.98 "Newsreader",serif; letter-spacing:-.035em; }
+.careers > div:last-child { align-self:end; }
+.careers > div:last-child p { max-width:620px; margin:0 0 28px; font-size:17px; line-height:1.7; }
 
 .site-footer { display:grid; grid-template-columns:1.5fr repeat(3,1fr); gap:45px; padding:70px var(--pad) 25px; background:var(--navy); color:white; }
 .site-footer img { width:220px; padding:10px; background:white; }
@@ -94,23 +100,30 @@ h1,h2 { font-family:"Newsreader",serif; }
   .promise,.title-block { grid-template-columns:1fr; }
   .story { grid-template-columns:1fr; }
   .story-photo { min-height:500px; }
-  .trust { grid-template-columns:1fr 1fr; }
+  .trust { grid-template-columns:repeat(4,220px); }
   .project-cards { grid-template-columns:1fr 1fr; }
   .testimonials { grid-template-columns:1fr; }
+  .careers { grid-template-columns:1fr; }
   .site-footer { grid-template-columns:1fr 1fr; }
 }
 @media(max-width:580px) {
-  .topline span { display:none; }
-  .topline { justify-content:flex-end; }
-  .logo { width:180px; }
+  .topline { padding:7px 18px; font-size:9px; }
+  header { gap:14px; padding:15px 18px; }
+  .logo { width:150px; }
+  .header-phone { display:inline-flex; font-size:10px; }
+  header nav { gap:24px; padding-bottom:2px; }
+  header nav a { min-height:38px; display:flex; align-items:center; white-space:nowrap; }
   .hero-copy { padding-top:70px; }
-  .hero h1 { font-size:16vw; }
+  .hero h1 { font-size:clamp(52px,15vw,72px); }
   .family-seal { width:110px; height:110px; }
-  .service-grid,.project-cards,.trust { grid-template-columns:1fr; }
+  .service-grid,.project-cards { grid-template-columns:1fr; }
   .service-grid article { min-height:auto; padding:35px 25px; }
+  .project-card h3 { font-size:27px; }
+  .project-card p { font-size:11px; line-height:1.5; }
   .title-block { margin-bottom:35px; }
   .contact { display:block; }
   .contact .button { margin-top:35px; }
+  .careers .button { margin-top:0; }
   .site-footer { grid-template-columns:1fr; }
 }
 @media(prefers-reduced-motion:reduce) {

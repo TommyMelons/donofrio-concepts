@@ -17,10 +17,13 @@
     nav { display: flex; justify-content: center; gap: 6px; }
     button {
       padding: 10px 14px; border: 1px solid #cbd0d2; border-radius: 4px; color: #4b5358;
-      background: white; font: 700 12px Arial, sans-serif; cursor: pointer;
+      background: white; font: 700 12px Arial, sans-serif; cursor: pointer; white-space: nowrap;
     }
     button:hover { border-color: #20262b; color: #20262b; }
-    button.active { border-color: #15191d; color: white; background: #15191d; }
+    button.active, button[aria-pressed="true"] {
+      border-color: #15191d; color: white; background: #15191d;
+      box-shadow: inset 0 -4px #d52230;
+    }
     :focus-visible { outline: 3px solid #d52230; outline-offset: 3px; }
     .actions { display: flex; align-items: center; gap: 14px; }
     #concept-name { color: #687076; font-size: 11px; white-space: nowrap; }
@@ -36,6 +39,15 @@
       nav button { flex: 0 0 auto; }
       #concept-name { display: none; }
       iframe { height: calc(100vh - 116px); }
+    }
+    @media (max-width: 600px) {
+      header { grid-template-columns: 1fr auto; padding: 9px 10px; }
+      .brand img { width: 145px; }
+      .actions { gap: 8px; }
+      #copy-link { display: none; }
+      nav { gap: 5px; padding-top: 3px; scrollbar-width: thin; }
+      nav button { padding: 9px 11px; }
+      iframe { height: calc(100vh - 111px); }
     }
     @media (prefers-reduced-motion: reduce) {
       iframe { transition: none; }

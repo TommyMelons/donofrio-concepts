@@ -29,10 +29,11 @@ nav a:hover { color:var(--yellow); }
 .scroll { align-self:end; font-size:9px; text-transform:uppercase; writing-mode:vertical-rl; }
 .hero-caption { position:absolute; top:38px; right:var(--pad); max-width:300px; margin:0; color:#b9c0c0; font-size:8px; line-height:1.5; text-align:right; text-transform:uppercase; letter-spacing:.06em; }
 
-.ticker { overflow:hidden; padding:16px 0; color:var(--black); background:var(--yellow); white-space:nowrap; }
-.ticker div { font:800 clamp(25px,3vw,42px) "Barlow Condensed",sans-serif; text-transform:uppercase; animation:slide 20s linear infinite; }
-.ticker b { padding:0 22px; color:var(--red); }
-@keyframes slide { to { transform:translateX(-30%); } }
+.ticker { overflow-x:auto; color:var(--black); background:var(--yellow); }
+.industrial-trust { display:grid; grid-template-columns:repeat(4,minmax(220px,1fr)); }
+.industrial-trust div { min-height:92px; display:flex; flex-direction:column; justify-content:center; padding:18px 24px; border-right:1px solid rgba(9,11,11,.35); text-transform:uppercase; }
+.industrial-trust strong { font:800 22px "Barlow Condensed",sans-serif; }
+.industrial-trust span { margin-top:7px; font-size:9px; letter-spacing:.06em; }
 .metrics { display:grid; grid-template-columns:repeat(4,1fr); border-bottom:1px solid var(--line); }
 .metrics article { min-height:260px; padding:30px var(--pad); border-right:1px solid var(--line); }
 .metrics span,.section-title span,.coverage-copy>span,.company span,.testimonial>span { color:#8d9696; font-size:10px; text-transform:uppercase; }
@@ -86,9 +87,9 @@ nav a:hover { color:var(--yellow); }
 .company h2 { margin-top:35px; font-size:clamp(60px,7.5vw,120px); }
 .company-copy { align-self:end; }
 .company-copy p { margin:30px 0 0; color:#b5baba; font-size:16px; line-height:1.7; }
-.testimonial { padding:clamp(90px,12vw,180px) var(--pad); color:var(--black); background:var(--yellow); }
+.testimonial { padding:clamp(50px,6vw,90px) var(--pad); color:var(--black); background:var(--yellow); text-align:left; }
 .testimonial>span { color:#4e480f; }
-.testimonial blockquote { max-width:1400px; margin:55px 0; font:800 clamp(48px,7vw,110px)/.92 "Barlow Condensed",sans-serif; text-transform:uppercase; }
+.testimonial blockquote { max-width:980px; margin:26px 0; font:800 clamp(34px,4.5vw,68px)/.96 "Barlow Condensed",sans-serif; text-transform:uppercase; }
 .testimonial p { font-size:10px; text-transform:uppercase; }
 .contact { padding:90px var(--pad); background:var(--red); }
 .contact>p { text-transform:uppercase; }
@@ -96,6 +97,13 @@ nav a:hover { color:var(--yellow); }
 .contact>div { display:flex; justify-content:space-between; align-items:end; margin-top:60px; padding-top:25px; border-top:2px solid white; }
 .contact a { font:800 34px "Barlow Condensed"; text-transform:uppercase; }
 .contact span { font-size:11px; line-height:1.7; }
+.careers { display:grid; grid-template-columns:1.4fr 1fr; gap:8vw; padding:clamp(70px,8vw,120px) var(--pad); border-bottom:1px solid var(--line); background:var(--gray); }
+.careers span { color:#8d9696; font-size:10px; text-transform:uppercase; }
+.careers h2 { margin:28px 0 0; font:900 clamp(52px,7vw,100px)/.82 "Barlow Condensed",sans-serif; letter-spacing:-.035em; text-transform:uppercase; }
+.careers > div:last-child { align-self:end; }
+.careers p { max-width:620px; margin:0 0 28px; color:#b5baba; font-size:14px; line-height:1.7; }
+.careers a { display:inline-flex; padding:14px 18px; color:var(--black); background:var(--yellow); font-size:11px; font-weight:500; text-transform:uppercase; }
+.careers a:hover { color:white; background:var(--red); }
 footer { display:grid; grid-template-columns:1.5fr repeat(3,1fr); gap:35px; padding:60px var(--pad) 25px; background:var(--black); }
 .footer-logo img { width:200px; }
 footer p { color:#8f9696; font-size:10px; line-height:1.8; text-transform:uppercase; }
@@ -112,15 +120,18 @@ footer small { grid-column:1/-1; padding-top:20px; border-top:1px solid var(--li
   .field-strip { grid-template-columns:1fr 1fr; }
   .field-strip>p { grid-column:1/-1; min-height:70px; }
   .section-title { grid-template-columns:1fr; gap:25px; }
-  .coverage,.company { grid-template-columns:1fr; }
+  .coverage,.company,.careers { grid-template-columns:1fr; }
   .map { border-left:0; border-top:1px solid var(--line); }
   footer { grid-template-columns:1fr 1fr; }
 }
 @media(max-width:600px) {
-  header { min-height:65px; }
-  .logo img { width:155px; }
-  .phone { display:none; }
-  .estimate { padding:12px; font-size:9px; }
+  header { min-height:65px; grid-template-columns:1fr auto; }
+  header > * { padding:12px 14px; }
+  .logo img { width:145px; }
+  .phone { grid-column:2; grid-row:1; display:flex; padding:12px; font-size:10px; white-space:nowrap; }
+  .estimate { display:none; }
+  header nav { gap:23px; padding:3px 14px; }
+  header nav a { min-height:40px; display:flex; align-items:center; white-space:nowrap; }
   .hero h1 { font-size:clamp(60px,21vw,88px); line-height:.74; }
   .hero-caption { display:none; }
   .hero-note { display:block; }
@@ -133,15 +144,16 @@ footer small { grid-column:1/-1; padding-top:20px; border-top:1px solid var(--li
   .project-ledger article>span { grid-column:1; grid-row:1; }
   .project-ledger h3 { grid-column:3; grid-row:1; align-self:end; font-size:25px; }
   .project-ledger p { grid-column:3; grid-row:2; align-self:start; }
+  .project-ledger p { font-size:11px; line-height:1.45; }
   .project-ledger small { display:none; }
   .project-ledger img { position:static; grid-column:2; grid-row:1/3; display:block; width:76px; height:58px; opacity:1; transform:none; }
   .project-ledger article:hover img { transform:none; }
   .contact>div { display:block; }
   .contact span { display:block; margin-top:25px; }
+  .careers h2 { font-size:clamp(48px,15vw,68px); }
   footer { grid-template-columns:1fr; }
 }
 @media(prefers-reduced-motion:reduce) {
   html { scroll-behavior:auto; }
   *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
-  .ticker div { animation:none; }
 }
