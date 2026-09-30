@@ -132,6 +132,7 @@ footer small { grid-column:1/-1; margin-top:40px; padding-top:18px; border-top:1
   .hero-actions { align-items:flex-start; flex-direction:column; }
   .video-wrap { min-height:65vh; }
   .service-grid { grid-template-columns:1fr; }
+  .trust { grid-template-columns:1fr 1fr; overflow:visible; }
   .section-heading { grid-template-columns:1fr; }
   .project-top { display:block; }
   .filters { margin-top:30px; overflow:auto; }

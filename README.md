@@ -16,7 +16,7 @@ This direction leads with scale, equipment, coverage, and measurable proof. The 
 
 ## Concept 4: Modern Minimal / Trades Meets Tech
 
-This direction presents D'Onofrio as a modern operator without losing its construction identity. A clean interface, field video, structured service system, project filters, and a clear four-step process make the company easy to understand. It is best for a broad mix of public and private clients and provides the strongest base for a larger future site.
+This direction presents D'Onofrio as a modern operator without losing its construction identity. A clean interface, a featured project image, structured service system, project filters, and a clear four-step process make the company easy to understand. It is best for a broad mix of public and private clients and provides the strongest base for a larger future site.
 
 ## Recommendation
 

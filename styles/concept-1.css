@@ -121,6 +121,7 @@ footer p { font-size: 13px; line-height: 1.8; }
   .logo { width: 150px; }
   .hero { padding-top: 28px; }
   .hero h1 { font-size: clamp(50px, 17vw, 72px); }
+  .trust-strip { grid-template-columns: 1fr 1fr; overflow: visible; }
   .hero-image img { height: 64vh; }
   .trust-strip div { min-height: auto; }
   .intro-copy, .project-grid { grid-template-columns: 1fr; }

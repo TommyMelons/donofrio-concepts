@@ -24,7 +24,7 @@ Research completed August 20, 2026. The current site confirms that D'Onofrio is 
 - [SiteInspire, Building and Construction](https://www.siteinspire.com/websites?categories=220): The strongest examples use big type, minimal grids, and project-first homepages rather than generic service-page templates.
 - [SiteInspire, Maben](https://www.siteinspire.com/website/13389-maben): A useful big-type, minimal construction reference with a simple visual system.
 - [Recent, formerly Godly](https://godly.website/): Reinforces the current move toward bold type, modular image feeds, and motion that helps browsing rather than decorating the page.
-- [Unsplash, heavy-lift crane barge](https://unsplash.com/photos/a-large-crane-on-a-barge-X-kS3DTrKUA): Supplies the temporary Concept 3 marine hero. The subject clearly demonstrates barge, crane, vessel, and heavy-lift capability.
+- [Unsplash, heavy-lift crane barge](https://unsplash.com/photos/a-large-crane-on-a-barge-X-kS3DTrKUA): Reviewed as a marine reference, then removed from Concept 3. The photograph shows a foreign harbor, so it is not safe to put in front of the D'Onofrio family.
 
 ## Anti-references
 
