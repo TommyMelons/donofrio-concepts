@@ -1,6 +1,8 @@
 # D'Onofrio Homepage Concepts
 
-Open `index.html` to review all four directions in one selector. Each concept can also be opened full screen from the selector.
+Open `index.html` to review all five directions in one selector. Each concept can also be opened full screen from the selector.
+
+Concept 5, Hybrid, is the direction to build. It keeps Concept 1’s editorial layout and Archivo Black headlines, with Concept 2’s navy, cream, and brick palette, the family seal, the navy trust band, and the family story. Drone footage and other client media replace the hero when they are received.
 
 ## Concept 1: Editorial / Studio
 
@@ -20,11 +22,7 @@ This direction presents D'Onofrio as a modern operator without losing its constr
 
 ## Recommendation
 
-Concept 4 is the recommended direction, pending client confirmation of credentials, project years, and testimonials.
-
-- It balances family credibility, field capability, and modern project control without pushing any one idea too far.
-- It gives project owners the fastest route to services, work, qualifications, and an estimate.
-- Its modular system can grow into project case studies, equipment pages, safety content, careers, and procurement resources.
+Concept 5, Hybrid, is the direction to build. Drone footage and other client media replace the hero when they are received. Credentials, project years, and testimonials still need client confirmation.
 
 ## Needed before the next pass
 
