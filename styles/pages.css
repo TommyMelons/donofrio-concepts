@@ -1,0 +1,39 @@
+.page-title {
+  margin: 0 0 22px;
+  color: var(--navy);
+  font: clamp(42px, 6vw, 88px)/1.05 "Archivo Black", sans-serif;
+  letter-spacing: -.05em;
+  text-transform: uppercase;
+}
+.page-lead { max-width: 65ch; margin: 0 0 16px; font-size: 18px; line-height: 1.5; }
+.page-lead:last-child { margin-bottom: 0; }
+.page-lead + .service-list,
+.page-lead + .project-grid { margin-top: 40px; }
+
+.contact > .contact-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+  margin-top: 36px;
+  padding-top: 0;
+  border-top: 1px solid var(--navy);
+}
+.contact-facts > div { min-width: 0; padding: 22px 24px 22px 0; border-bottom: 1px solid var(--navy); }
+.contact-facts > div:nth-child(even) { padding-right: 0; padding-left: 24px; border-left: 1px solid var(--navy); }
+.contact-facts strong {
+  display: block; margin-bottom: 8px; color: var(--brick);
+  font-family: ui-monospace, "Cascadia Mono", "Segoe UI Mono", Consolas, monospace;
+  font-size: 12px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
+}
+.contact > .contact-facts a,
+.contact > .contact-facts p { margin: 0; color: var(--navy); font-size: clamp(20px, 2vw, 28px); line-height: 1.35; font-weight: 500; }
+.contact-facts a:hover { color: var(--brick); }
+.contact-call { margin-top: 28px; }
+
+@media (max-width: 600px) {
+  .page-title { font-size: clamp(36px, 12vw, 52px); }
+  .contact > .contact-facts { grid-template-columns: 1fr; }
+  .contact-facts > div,
+  .contact-facts > div:nth-child(even) { padding: 18px 0; border-left: 0; }
+}
