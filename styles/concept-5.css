@@ -38,17 +38,17 @@ nav a:hover, .text-link:hover { color: var(--navy); }
 .button:hover { background: var(--navy); color: white; }
 .button-small { padding: 11px 16px; font-size: 12px; }
 
-.hero { padding: 46px var(--pad) 0; }
+.hero { padding: 36px var(--pad) 0; }
 .eyebrow, .section-label { color: var(--brick); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .14em; }
 .hero h1, .story-copy h2, .section-head h2, .contact h2, .careers h2, .promise p {
   color: var(--navy); font-family: "Archivo Black", sans-serif; text-transform: uppercase;
 }
-.hero h1 { max-width: 1150px; margin: 7vh 0 4vh; color: var(--navy); font: clamp(62px, 10.2vw, 158px)/.84 "Archivo Black", sans-serif; letter-spacing: -.065em; text-transform: uppercase; }
-.hero-bottom { display: grid; grid-template-columns: 1fr 1fr; align-items: end; margin-left: 34%; padding-bottom: 28px; border-bottom: 1px solid var(--navy); }
-.hero-bottom p { max-width: 560px; margin: 0; font-size: clamp(18px, 2vw, 28px); line-height: 1.25; }
-.text-link { justify-self: end; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+.hero h1 { max-width: 12ch; margin: 28px 0 22px; color: var(--navy); font: clamp(56px, 8.4vw, 128px)/.86 "Archivo Black", sans-serif; letter-spacing: -.06em; text-transform: uppercase; }
+.hero-bottom { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; max-width: 420px; margin: 0 0 36px; }
+.hero-bottom p { margin: 0; color: var(--ink); font-size: 18px; line-height: 1.45; }
+.text-link { font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
 .text-link span { margin-left: 8px; }
-.hero-image { margin: 0; position: relative; }
+.hero-image { position: relative; margin: 0 calc(var(--pad) * -1); }
 .hero-image img { height: min(66vw, 760px); object-fit: cover; filter: saturate(.72) contrast(1.05); }
 .hero-image figcaption {
   position: absolute; right: 12px; bottom: 12px; z-index: 2; max-width: min(320px, calc(100% - 180px));
@@ -79,6 +79,7 @@ nav a:hover, .text-link:hover { color: var(--navy); }
 .promise p:last-child { font-size: clamp(30px, 4.4vw, 68px); }
 
 .intro, .services, .projects, .testimonial, .contact, .careers { padding: clamp(90px, 13vw, 190px) var(--pad); border-bottom: 1px solid var(--navy); }
+.services { background: var(--cream); }
 .story { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(28px, 4vw, 72px); align-items: center; }
 .story-photo { position: relative; margin: 0; }
 .story-photo img { height: min(72vw, 640px); object-fit: cover; filter: saturate(.8) contrast(1.05); }
@@ -132,9 +133,7 @@ footer p { font-size: 13px; line-height: 1.8; }
   .site-header { grid-template-columns: 1fr auto; }
   .site-header nav { grid-column: 1/-1; grid-row: 2; display: flex; justify-content: flex-start; overflow-x: auto; padding-top: 3px; }
   .logo { width: 175px; }
-  .hero h1 { margin-top: 55px; }
-  .hero-bottom { grid-template-columns: 1fr; gap: 24px; margin-left: 0; }
-  .text-link { justify-self: start; }
+  .hero h1 { max-width: 11ch; margin-top: 36px; }
   .promise { grid-template-columns: 1fr; }
   .story { grid-template-columns: 1fr; }
   .intro h2, .contact h2, .contact > div { grid-column: 1; }
@@ -156,8 +155,9 @@ footer p { font-size: 13px; line-height: 1.8; }
   .button-small { display: none; }
   .phone { display: inline-flex; font-size: 12px; }
   .logo { width: 150px; }
-  .hero { padding-top: 28px; }
-  .hero h1 { font-size: clamp(46px, 15.4vw, 68px); }
+  .hero { padding-top: 18px; }
+  .hero h1 { max-width: none; font-size: clamp(46px, 15.4vw, 68px); }
+  .hero-bottom { max-width: none; margin-bottom: 24px; }
   .hero-image img { height: 64vh; }
   .hero-image figcaption { max-width: calc(100% - 148px); }
   .family-seal { top: 14px; left: 14px; width: 112px; height: 112px; padding: 12px; }
